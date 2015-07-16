@@ -106,8 +106,18 @@ a {
 a:hover,
 a:focus {
   text-decoration: none;
-  color:#696E74;
+  color:#1abc9c;
 }
+
+.linked-icon {
+  color:white;
+}
+
+.linked-icon:hover,
+.linked-icon:focus {
+  color:#DBD9D9;
+}
+
 
 .nopadding {
 	padding: 0px !important;
@@ -201,7 +211,9 @@ input {
 
 /* HEADER SECTION */
 #h {
-	background: url(../img/header.jpg) no-repeat center top;
+	background:
+      url(../img/kahlil.jpg) no-repeat center top;
+
 	padding-top: 5px;
 	background-attachment: relative;
 	background-position: center center;
