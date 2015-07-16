@@ -298,26 +298,14 @@ input {
 /* CLIENTS */
 
 .companies {
-    text-align: justify;
     -ms-text-justify: distribute-all-lines;
     text-justify: distribute-all-lines;
-    margin: auto;
 }
 
-.clients img {
-	max-width: 140px;
-	max-height: 60px;
-	vertical-align: top;
-}
-
-.clients .col-sm-2 {
-    vertical-align: top;
+.companies a {
     display: inline-block;
     *display: inline;
-    zoom: 1
-	height: 80px;
-	line-height: 80px;
-    margin: auto;
+    zoom: 1;
 }
 
 .stretch {
@@ -325,6 +313,18 @@ input {
     display: inline-block;
     font-size: 0;
     line-height: 0
+}
+
+.clients img {
+	max-width: 200px;
+	max-height: 60px;
+}
+
+.clients .col-sm-2 {
+    width: 200px;
+	height: 80px;
+	line-height: 80px;
+    margin: auto;
 }
 
 /* CONTACT SEPARATOR */
