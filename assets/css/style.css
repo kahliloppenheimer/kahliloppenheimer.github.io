@@ -253,7 +253,7 @@ input {
 }
 
 /* GREY SECTION */
-#g {
+.grey_section {
 	padding-top: 50px;
 	padding-bottom: 50px;
 	background: #f5f5f5;
@@ -297,15 +297,34 @@ input {
 
 /* CLIENTS */
 
+.companies {
+    text-align: justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+    margin: auto;
+}
+
 .clients img {
 	max-width: 140px;
 	max-height: 60px;
-	vertical-align: middle;
+	vertical-align: top;
 }
 
 .clients .col-sm-2 {
+    vertical-align: top;
+    display: inline-block;
+    *display: inline;
+    zoom: 1
 	height: 80px;
 	line-height: 80px;
+    margin: auto;
+}
+
+.stretch {
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0
 }
 
 /* CONTACT SEPARATOR */
