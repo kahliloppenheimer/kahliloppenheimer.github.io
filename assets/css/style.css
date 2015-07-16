@@ -115,7 +115,7 @@ a:focus {
 
 .linked-icon:hover,
 .linked-icon:focus {
-  color:#FF0000;
+  color:#66FF66;
 }
 
 
@@ -358,7 +358,7 @@ input {
 #f {
 	padding-top: 25px;
 	padding-bottom: 25px;
-	background-color: #22A7F0;
+	background-color: #8A71D9;
 }
 
 #f i {
