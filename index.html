@@ -4,12 +4,11 @@ layout: default
 
 <div class="posts">
   {% for post in paginator.posts %}
-  {% assign post_url = post.url | append: '/' | replace: '//', '/' | prepend: site.baseurl | prepend: site.url | %}
   <article class="post">
 
     {% if post.banner_image %}
     <div class="banner-image">
-      <a href="{{ post_url }}"
+      <a href="{{ post.url | append: '/' | replace: '//', '/' | prepend: site.baseurl | prepend: site.url |  }}" 
         title="{{ post.title }}">
       <img 
           src="{{ "/assets/images/" | append: post.banner_image | prepend: site.baseurl | prepend: site.url }}" 
@@ -36,9 +35,6 @@ layout: default
     </p>
 
     {{ post.excerpt }}
-    <a href="{{ post.url | append: '/' | replace: '//', '/' | prepend: site.baseurl | prepend: site.url |  }}">
-      Continue reading »
-    </a>
   </article>
   {% endfor %}
 </div>

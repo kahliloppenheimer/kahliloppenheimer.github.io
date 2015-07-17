@@ -1,14 +1,14 @@
 # Site settings
 title: Your awesome title
 tagline: And Tagline
-email: gayanvirajith@gmail.com
+email: webcreatelk@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Hi, I’m a professional UI/UX designrer and web developer. 
   I love being minimal and creative.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://127.0.0.1:4000" # the base hostname & protocol for your site
+baseurl: "/gaya" # the subpath of your site, e.g. /blog/
+url: "http://webcreate.lk" # the base hostname & protocol for your site
 logourl: /assets/images/logo.png # Site logo
-author: "Kahlil Oppenheimer"
+author: "Tom Warlker"
 author_thumbnail: "/assets/images/avatar.jpg" # Author avatar
 # Theme customization - please change from the defaults!
 theme:
