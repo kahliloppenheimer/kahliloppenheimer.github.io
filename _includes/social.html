@@ -1,6 +1,24 @@
 {% capture social_media_li %}
 <ul class="social-media">
 
+    {% if site.theme.social.github %}
+    <li>
+        <a title="{{ site.theme.social.github }} on Github" 
+            href="https://github.com/{{ site.theme.social.github }}" 
+            class="github wc-img-replace" target="_blank">Github</a>
+    </li>
+    {% endif %} 
+
+    {% if site.theme.social.linkedIn %}
+    <li>
+        <a title="{{ site.theme.social.linkedIn }} on LinkedIn" 
+            href="https://linkedin.com/in/{{ site.theme.social.linkedIn }}" 
+            class="ion-social-linkedin" target="_blank"></a>
+    </li>
+    {% endif %} 
+
+
+
     {% if site.theme.social.twitter %}
     <li>
         <a title="{{ site.theme.social.twitter }} on Twitter" 
@@ -24,14 +42,6 @@
             class="facebook wc-img-replace" target="_blank">Facebook</a>
     </li>
     {% endif %}
-
-    {% if site.theme.social.github %}
-    <li>
-        <a title="{{ site.theme.social.github }} on Github" 
-            href="https://github.com/{{ site.theme.social.github }}" 
-            class="github wc-img-replace" target="_blank">Github</a>
-    </li>
-    {% endif %} 
 
     {% if site.theme.social.dribble %}
     <li>
