@@ -1,5 +1,6 @@
 # Site settings
-title: kahlil.me
+# Not a typo--the logo is the K
+title: ahlil.me
 tagline: tech blog
 email: kahliloppenheimer@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
