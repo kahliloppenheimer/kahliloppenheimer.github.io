@@ -1,9 +1,9 @@
 # Site settings
-title: Kahlil Oppenheimer
-tagline: Computer Science
+title: kahlil.me
+tagline: tech blog
 email: kahliloppenheimer@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-    Hi, I write computer programs that explore uncharted oceans...on Mars!
+    "Computer science is no more about computers than astronomy is about telescopes." - Dijkstra
 baseurl: "" # the subpath of your site, e.g. /blog/
 # url: "http://kahlil.me" # the base hostname & protocol for your site
 logourl: /assets/images/logo.png # Site logo
@@ -12,13 +12,13 @@ author_thumbnail: "/assets/images/avatar.jpg" # Author avatar
 # Theme customization - please change from the defaults!
 theme:
   # Color for sidebar bar, links, etc
-  highlight_color: "#205081" #205081" # "#272935"
+  highlight_color: "#6600CC" #205081 #205081" # "#272935"
   # Social media links, leave blank to ignore
   social: 
     github: kahliloppenheimer
     linkedIn: kahliloppenheimer
-    twitter: uneditedjustice
-    facebook: kahliloppenheimer
+    twitter: 
+    facebook: 
     gplus:
     # dribble: 
     pinterest: 

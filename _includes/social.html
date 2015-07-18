@@ -4,8 +4,10 @@
     {% if site.theme.social.github %}
     <li>
         <a title="{{ site.theme.social.github }} on Github" 
-            href="https://github.com/{{ site.theme.social.github }}" 
-            class="github wc-img-replace" target="_blank">Github</a>
+            href="https://github.com/{{ site.theme.social.github }}"
+            target="_blank">
+            <i class="ion-social-github"></i> 
+        </a>
     </li>
     {% endif %} 
 
@@ -13,7 +15,9 @@
     <li>
         <a title="{{ site.theme.social.linkedIn }} on LinkedIn" 
             href="https://linkedin.com/in/{{ site.theme.social.linkedIn }}" 
-            class="ion-social-linkedin" target="_blank"></a>
+            target="_blank">
+              <i class="ion-social-linkedin"></i>
+        </a>
     </li>
     {% endif %} 
 
@@ -23,7 +27,7 @@
     <li>
         <a title="{{ site.theme.social.twitter }} on Twitter" 
             href="https://twitter.com/{{ site.theme.social.twitter }}" 
-            class="twitter wc-img-replace" target="_blank">Twitter</a>
+            class="ion-social-twitter" target="_blank"></a>
     </li>   
     {% endif %}
 
@@ -31,7 +35,7 @@
     <li>
         <a title="{{ site.theme.social.gplus }} on Google Plus" 
             href="https://plus.google.com/{{ site.theme.social.gplus }}" 
-            class="google wc-img-replace" target="_blank">Google</a>
+            class="ion-social-google" target="_blank"></a>
     </li>
     {% endif %}
 
@@ -39,7 +43,7 @@
     <li>
         <a title="{{ site.theme.social.facebook }} on Facebook" 
             href="https://facebook.com/{{ site.theme.social.facebook }}" 
-            class="facebook wc-img-replace" target="_blank">Facebook</a>
+            class="ion-social-facebook" target="_blank"></a>
     </li>
     {% endif %}
 
@@ -62,8 +66,7 @@
     <li>
         <a title="Subscribe via RSS" 
             href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}"
-            class="rss wc-img-replace" target="_blank">
-            RSS
+            class="ion-social-rss" target="_blank">
         </a>
     </li>
 

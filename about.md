@@ -6,10 +6,9 @@ banner_image: sample-banner-image-2.jpg
 banner_image_alt: About me
 ---
 
-Hi, I am Kahlil Oppenheimer. I study computer science at Brandeis University. I love being minimal and creative.
+Hi, my name is Kahlil Oppenheimer. I study computer science at Brandeis University.
 
-I prefer to serve with Php and Ruby based stacks and also love to work 
-on [Jekyll][jekyll] and [Processwire CMS/CMF][pw].
+I write computer programs that explore uncharted oceans...on Mars!
 
 ### Contact me
 
