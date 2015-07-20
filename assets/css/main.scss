@@ -213,8 +213,10 @@ img {
  */
 
 .header {
-  background: $color-white;
-  // background: #CCCCFF;
+  // background: $color-white;
+  background-color: #E0E0FF;
+  background-image: url("images/brick-wall-dark.png");
+  background-repeat: repeat;
   margin-bottom: 3rem;
   border-bottom: 1px solid $gray-lighter;
   width: 100%;
@@ -275,7 +277,9 @@ img {
   }
 }
 
-
+.header .header-title h3 small {
+    color: #666699;
+}
 
 
 
