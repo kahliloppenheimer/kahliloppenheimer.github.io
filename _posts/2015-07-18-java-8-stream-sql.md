@@ -4,7 +4,6 @@ title: "SQL on Java Collections with streams"
 date: 2015-07-18
 categories: guide java
 banner_image: xkcd_streams.png
-comments: true
 ---
 
 ## Intro
