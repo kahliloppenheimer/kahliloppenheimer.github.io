@@ -303,10 +303,11 @@ tbody tr:nth-child(odd) th {
 code,
 pre {
   font-family: Menlo, Monaco, "Courier New", monospace;
+  font-size: 18px;
 }
 
 code {
-  padding: 2px .5em;
+  // padding: 2px .5em;
   color: #bf616a;
   background-color: #f9f9f9;
   border-radius: 2px;
