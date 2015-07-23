@@ -27,10 +27,11 @@ might yield
 public class MyJavaClass {
 public static void main(String[] args) {
 public static final int MY_INT_CONST = 3;
-...
 {%endhighlight%}
 
 As input, `grep` takes a pattern and some text to search (maybe a file, maybe the output of another program). As output, it then prints out all lines of the input text that match the pattern.
+
+For our implementation, a pattern is just a [Regular Expression][regex-wiki].
 
 Not so bad, right?
 
@@ -42,7 +43,7 @@ This is where we will write the bulk of the logic of our program. With streams, 
 {% highlight java %}
 
 public static Stream<String> grep (String pattern, String fileName) {
-    return Files.lines(getPath(fileName))
+    return Files.lines(Paths.get(fileName))
                 .filter(line -> line.matches(pattern));
 }
 
@@ -52,20 +53,8 @@ Fortunately, Java 8 streams shipped with some pretty sweet I/O functions, like `
 
 All we need to do after that is filter those lines by matching on our pattern (built into Java.lang.String), and we're done!
 
-### The `getPath` method
-I also called a `getPath` function, which is simply defined as:
-
-{% highlight java %}
-public static Path getPath(String fileName) throws IOException {
-    String homeDir = System.getProperty("user.home");
-    return Paths.get(fileName.replaceFirst("~", homeDir));
-}
-{% endhighlight %}
-
-This lets people pass in paths like `~/Desktop`, where `~` makes the path relative to your home directory. It also constructs and returns a `java.nio.path` object, which `java.nio.Files::lines` requires.
-
 ### The `main` method
-Finally, we can give our Grep class a main method so that we can call it from the command line.
+Now, we can give our Grep class a main method so that we can call it from the command line.
 
 {% highlight java %}
 
@@ -74,6 +63,8 @@ public static void main(String[] args) throws IOException {
 }
 
 {% endhighlight %}
+
+All we're doing here is calling our grep function, then printing out each line in the stream that gets returned.
 
 ### The whole program
 Putting it all back together, our grep program in its entirety looks like:
@@ -86,14 +77,9 @@ public class Grep {
         grep(args[0], args[1]).forEach(System.out::println);
     }
 
-    public static Path getPath(String fileName) throws IOException {
-        String homeDir = System.getProperty("user.home");
-        return Paths.get(fileName.replaceFirst("~", homeDir));
-    }
-
     public static Stream<String> grep(String pattern, String fileName)
             throws IOException {
-        return Files.lines(getPath(fileName))
+        return Files.lines(Paths.get(fileName))
                     .filter(line -> line.matches(pattern));
     }
 
@@ -124,4 +110,4 @@ public class Grep {
 
 [grep-wiki]: https://en.wikipedia.org/wiki/Grep
 [find-wiki]: https://en.wikipedia.org/wiki/Find
-
+[regex-wiki]: https://en.wikipedia.org/wiki/Regular_expression
