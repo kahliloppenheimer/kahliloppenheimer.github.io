@@ -7,7 +7,7 @@ banner_image: grep.png
 ---
 
 ## Intro
-We're going to write our very own `grep` command using Java 8 streams. By the end, we will be able to run it on the command line, just like the normal unix grep program.
+We're going to write our very own `grep` command using Java 8 streams. By the end, we will be able to run it on the command line, just like the normal UNIX grep program.
 
 ## Pre-reqs
 This post assumes you have some familiarity with Java 8 streams and a basic understanding of regular expressions. We're actually going to review `grep`, so it's ok if you do not yet know it.
@@ -31,7 +31,7 @@ public static final int MY_INT_CONST = 3;
 
 As input, `grep` takes a pattern and some text to search (maybe a file, maybe the output of another program). As output, it then prints out all lines of the input text that match the pattern.
 
-For our implementation, a pattern is just a [Regular Expression][regex-wiki].
+Our `grep` implementation will only take files as input, and will only use [Regular Expressions][regex-wiki] as patterns.
 
 Not so bad, right?
 
