@@ -12,6 +12,7 @@ os.rename(oldPath, newPath)
 commitMsg = "Publishing new post " + newPath.split('/')[-1]
 print commitMsg
 subprocess.call(["git", "add", newPath])
+subprocess.call(["git", "rm", "-cached", oldPath])
 subprocess.call(["git", "commit", "-m", commitMsg])
 subprocess.call(["git", "pull"])
 subprocess.call(["git", "push"])
