@@ -1,0 +1,19 @@
+<div id="notebook"></div>
+<script src="https://embed.tonicdev.com"></script>
+
+<script>
+var example = "var bd = require('text-backdrop');" + '\n' + "await bd('Donald Trump is running as the Republican candidate in 2016')";
+var notebook = Tonic.createNotebook({
+    // the parent element for the new notebook
+    element: document.getElementById("notebook"),
+
+    // specify the source of the notebook
+    source: example,
+
+    // optionally, set the notebook to be read-only
+    readOnly: false,
+
+    // optionally, provide a callback to be called when the notebook has finished loading
+    onLoad: function(){}
+})
+</script>
