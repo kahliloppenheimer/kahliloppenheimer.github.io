@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Text-backdrop Demo"
+title: "Text-backdrop: contextualize any text"
 categories: projects nodejs npm nlp
 banner_image: graphics_banner.jpeg
 ---
