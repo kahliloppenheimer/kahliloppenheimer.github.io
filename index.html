@@ -34,7 +34,12 @@ layout: default
     </span>
     </p>
 
-    {{ post.excerpt }}
+    {% if site.preview_posts %}
+        {{ post.excerpt }}
+    {% else %}
+        {{ post.content }}
+    {% endif %}
+
   </article>
   {% endfor %}
 </div>
