@@ -4,11 +4,13 @@ title: "Topical web-page classification"
 date: 2015-12-20
 categories: nlp classification web-page
 ---
+[[READ THE FULL PAPER]][full-paper]
+
 ![web classification demo image](http://www.kdnuggets.com/wp-content/uploads/text-analysis-acme2.jpg)
 
 Predicting the topics of web-pages based on their textual content turns is interesting and difficult. There is a lot of existing research giving [broad overviews][overview] of what has been done, as well as specifics of particular techniques(i.e. [document summarization techniques][summarization] or [page hierarchy inference][neighbors]).
 
-I attempted to reproduce and combine many of these results from existing literature. You can [read the full paper here][full-paper].
+I attempt to reproduce and combine many of these results from existing literature. This post contains a short summary of my results.
 
 ## Setup
 I worked with a subset of the [DMOZ dataset][dmoz], which is an XML document containing over 3,600,000 web pages labeled with their topic (i.e. Arts/Anime/Japanese) and a short description of the website. I used an [open-source parser][dmoz-parser] to convert the data to a nicer JSON format. Then I trained a classifier using [Mallet][mallet], an open-source language toolkit.
