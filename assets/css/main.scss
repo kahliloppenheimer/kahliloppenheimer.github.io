@@ -509,7 +509,6 @@ img {
   visibility: visible;
 }
 #sidebar-checkbox:checked ~ .sidebar,
-#sidebar-checkbox:checked ~ .main-wrapper,
 #sidebar-checkbox:checked ~ .sidebar-toggle {
   @include transform(translateX(15rem))
 }
