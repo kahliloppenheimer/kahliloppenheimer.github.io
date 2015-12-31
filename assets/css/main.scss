@@ -513,6 +513,8 @@ img {
   @include transform(translateX(15rem))
 }
 
+// Slide post content so that it remains centered in remaining space after
+// sidebar slides out
 #sidebar-checkbox:checked ~ .main-wrapper {
     @include transform(translateX(7.5rem))
 }
