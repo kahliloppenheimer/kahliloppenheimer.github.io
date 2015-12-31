@@ -5,7 +5,7 @@
 /**
  *
  * Gaya jekyll theme
- * Designed, built, by web-create. 
+ * Designed, built, by web-create.
  *
  * CONTENTS
  *
@@ -18,15 +18,15 @@
  *
  * GENERTIC
  * Resets               - Gloabal resets thanks to meyerweb.com
- * Body resets          - Body resets, box sizing 
- * 
+ * Body resets          - Body resets, box sizing
+ *
  * BASE
  * Typography           - Custom typography
  * Syntax               - Syntax highlighting
- * 
+ *
  * OBJECTS
  * Wrappers             - Wrapping and constraining elements.
- *  
+ *
  * COMPONENTS
  * header               - Site header
  * sidebar              - Sidebar & toggle
@@ -135,7 +135,7 @@ a {
 
 a:hover {
   @include transition(all .3s);
-  border-bottom-color: $color-1; 
+  border-bottom-color: $color-1;
 }
 
 /* Responsive images */
@@ -183,7 +183,7 @@ img {
 
 /*
  * Container - Centering the page content.
- * 
+ *
  */
 
 .container {
@@ -220,14 +220,14 @@ img {
   margin-bottom: 3rem;
   border-bottom: 1px solid $gray-lighter;
   width: 100%;
-  padding: 1em 0;  
+  padding: 1em 0;
   @include MQ(M){
     margin-bottom: 4rem;
     display: table;
     height: 50px;
   }
-  
-  /* 
+
+  /*
    * Special media query hack for small tablet screen.
    * Due to overlap of menu toggle and the logo.
    */
@@ -247,7 +247,7 @@ img {
 
 .header .header-logo img {
   text-align: center;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 .header .header-logo a {
@@ -270,8 +270,8 @@ img {
   }
 }
 
-.header .header-title h3 { 
-  margin-bottom: 15px; 
+.header .header-title h3 {
+  margin-bottom: 15px;
   small {
     padding-left: 10px;
   }
@@ -290,8 +290,8 @@ img {
 /*
  * Sidebar
  *
- * The off-canvas sidebar, will be triggered by toggle button which will 
- * rendered on the top left corner. 
+ * The off-canvas sidebar, will be triggered by toggle button which will
+ * rendered on the top left corner.
  *
  */
 
@@ -317,8 +317,8 @@ img {
 
 /* Sidebar content */
 
-.sidebar { 
-  text-align: center; 
+.sidebar {
+  text-align: center;
   padding: 1em;
 }
 
@@ -330,10 +330,10 @@ img {
 
 .sidebar .sidebar-info { padding: 1em 0; }
 
-.sidebar img { 
+.sidebar img {
   width: 80px;
   height: 80px;
-  margin: 0 auto;   
+  margin: 0 auto;
   border-radius: 50%;
 }
 
@@ -367,7 +367,7 @@ img {
   background: lighten($color-1, 3%);
 }
 
-.sidebar .sidebar-nav .sidebar-nav-item.active { 
+.sidebar .sidebar-nav .sidebar-nav-item.active {
   background-color: darken($color-1, 2%);
 }
 
@@ -462,7 +462,7 @@ img {
         top: 4px;
         width: 10px;
         @include transform(rotate(45deg));
-    }        
+    }
   }
 }
 
@@ -480,13 +480,13 @@ img {
 
 
 
-/* 
+/*
  * Slide effect
  *
  * Handle the sliding effects of the sidebar
  *
  */
- 
+
 .main-wrapper,
 .sidebar,
 .sidebar-toggle {
@@ -503,7 +503,7 @@ img {
   -o-transition: -o-transform .5s ease-in-out;
   transition: transform .5s ease-in-out;
 }
- 
+
 #sidebar-checkbox:checked + .sidebar {
   z-index: 10;
   visibility: visible;
@@ -514,6 +514,11 @@ img {
   @include transform(translateX(15rem))
 }
 
+#sidebar-checkbox:checked ~ .main-wrapper {
+    @include transform(translateX(7.5rem))
+}
+// #sidebar-checkbox:checked ~ .
+
 
 
 
@@ -523,11 +528,11 @@ img {
 \*------------------------------------*/
 
 /*
- * Post/Pages 
- * Every post article can be wrapped in a container class named `.post` 
+ * Post/Pages
+ * Every post article can be wrapped in a container class named `.post`
  * and used in post layout under _layout folder.
- * Every page content also wrapped in a container named `.page` and used 
- * in page layout under _layout folder. 
+ * Every page content also wrapped in a container named `.page` and used
+ * in page layout under _layout folder.
  */
 
 .post, .page {
@@ -560,7 +565,7 @@ img {
   padding: 1.5em 0 2em 0;
   letter-spacing: 1px;
   @include MQ(M) {
-    font-size: 18px;    
+    font-size: 18px;
   }
 }
 
@@ -580,7 +585,7 @@ img {
 .related-posts ul li a {
   &:hover, &:focus {
     small {
-      color: inherit; 
+      color: inherit;
     }
   }
 }
@@ -621,9 +626,9 @@ img {
  *
  */
 
-.post .banner-image, 
-.page .banner-image, 
-.post .banner_video, 
+.post .banner-image,
+.page .banner-image,
+.post .banner_video,
 .page .banner_video {
   margin: -1em -1em 0 -1em;
   padding-bottom: 1em;
@@ -641,8 +646,8 @@ img {
 \*------------------------------------*/
 
 /*
- * 
- * Disqus comments, share-buttons 
+ *
+ * Disqus comments, share-buttons
  */
 
 .comments {
@@ -680,10 +685,10 @@ img {
   @include MQ(M) {
     padding: 1em .5em 0 0;
     @include column(.5);
-  } 
+  }
 }
 
-.author, .share-buttons { 
+.author, .share-buttons {
   h5, h6 { margin: 0 0 4px 0; }
   h5 { text-transform: uppercase; color: $gray-darker; }
   p { @include font-size(14px); }
