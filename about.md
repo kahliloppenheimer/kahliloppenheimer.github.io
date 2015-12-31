@@ -12,7 +12,7 @@ I write computer programs that explore uncharted oceans...on Mars!
 
 ### Contact me
 
-Say `Hello` at [kahliloppenheimer@gmail.com]({{ site.email }}) or find
+Say `Hello` at <a href="mailto:{{ site.email }}">kahliloppenheimer@gmail.com</a> or find
 me on
 
 ---
