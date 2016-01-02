@@ -15,14 +15,18 @@ theme:
   # Color for sidebar bar, links, etc
   highlight_color: "#6600CC" #205081 #205081" # "#272935"
   # Social media links, leave blank to ignore
-  social: 
+  social:
+    # Color of all logos
+    color: black
+    # Size of all logos (font size)
+    size: x-large
     github: kahliloppenheimer
     linkedIn: kahliloppenheimer
-    twitter: 
-    facebook: 
+    twitter:
+    facebook:
     gplus:
-    # dribble: 
-    pinterest: 
+    # dribble:
+    pinterest:
 
   # Enable share buttons on post footer
   show_share_buttons: true
@@ -35,7 +39,7 @@ theme:
 
   # Google Analytics/Webmaster key, leave blank to ignore
   google_analytics_key: UA-65292043-1
-  google_webmaster_key: 
+  google_webmaster_key:
 
 # Build settings
 markdown: kramdown
@@ -50,7 +54,7 @@ paginate: 5
 excerpt_posts: false
 
 # Files/Folders to be excluded from generated _site folder
-exclude: 
+exclude:
   - CNAME
   - Gemfile
   - Rakefile

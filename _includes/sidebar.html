@@ -1,8 +1,8 @@
 {% capture sidebar %}
 {% comment %}
-<!-- 
+<!--
 Handler for toggling the sidebar `.sidebar-toggle-checkbox` is used for regular
-styles and `#sidebar-toggle-checkbox` for behavior. 
+styles and `#sidebar-toggle-checkbox` for behavior.
 -->
 {% endcomment %}
 <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
@@ -10,7 +10,7 @@ styles and `#sidebar-toggle-checkbox` for behavior.
 <div class="sidebar" id="sidebar">
 
   {% if site.author_thumbnail && site.author_thumbnail != '' %}
-  <img 
+  <img
     src="{{ site.author_thumbnail | prepend: site.baseurl | prepend: site.url }}"
     alt="{{ site.title }}" />
 
@@ -24,8 +24,8 @@ styles and `#sidebar-toggle-checkbox` for behavior.
 
   <nav class="sidebar-nav">
 
-    <a class="sidebar-nav-item{% if page.url == '/index.html' %} active {% endif %}" 
-      href="{{ '' | prepend: site.baseurl | prepend: site.url | append: '/' }}"> 
+    <a class="sidebar-nav-item{% if page.url == '/index.html' %} active {% endif %}"
+      href="{{ '' | prepend: site.baseurl | prepend: site.url | append: '/' }}">
       Home
     </a>
 
@@ -37,13 +37,13 @@ styles and `#sidebar-toggle-checkbox` for behavior.
     {% assign c = "" %}
     {% endif %}
 
-    <a class="sidebar-nav-item {{ c }}" 
+    <a class="sidebar-nav-item {{ c }}"
       href="{{ item.href | prepend: site.baseurl | prepend: site.url }}">
       {{ item.title }}
     </a>
     {% endfor %}
 
-    <a class="sidebar-nav-item" 
+    <a class="sidebar-nav-item"
       href="/resume"
       target="_blank">
       Resume
@@ -52,9 +52,7 @@ styles and `#sidebar-toggle-checkbox` for behavior.
   </nav>
 
   <div class="sidebar-info small">
-     <p>
-     kahliloppenheimer@gmail.com
-     </p>
+     <a href="mailto:kahliloppenheimer@gmail.com">kahliloppenheimer@gmail.com</a>
   </div>
 
   {% include social.html %}

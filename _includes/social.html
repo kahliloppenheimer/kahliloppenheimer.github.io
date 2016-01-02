@@ -3,70 +3,71 @@
 
     {% if site.theme.social.github %}
     <li>
-        <a title="{{ site.theme.social.github }} on Github" 
+        <a title="{{ site.theme.social.github }} on Github"
             href="https://github.com/{{ site.theme.social.github }}"
             target="_blank">
-            <i class="ion-social-github"></i> 
+            <i class="ion-social-github"></i>
         </a>
     </li>
-    {% endif %} 
+    {% endif %}
 
     {% if site.theme.social.linkedIn %}
     <li>
-        <a title="{{ site.theme.social.linkedIn }} on LinkedIn" 
-            href="https://linkedin.com/in/{{ site.theme.social.linkedIn }}" 
+        <a title="{{ site.theme.social.linkedIn }} on LinkedIn"
+            href="https://linkedin.com/in/{{ site.theme.social.linkedIn }}"
             target="_blank">
               <i class="ion-social-linkedin"></i>
         </a>
     </li>
-    {% endif %} 
+    {% endif %}
 
 
 
     {% if site.theme.social.twitter %}
     <li>
-        <a title="{{ site.theme.social.twitter }} on Twitter" 
-            href="https://twitter.com/{{ site.theme.social.twitter }}" 
+        <a title="{{ site.theme.social.twitter }} on Twitter"
+            href="https://twitter.com/{{ site.theme.social.twitter }}"
             class="ion-social-twitter" target="_blank"></a>
-    </li>   
+    </li>
     {% endif %}
 
     {% if site.theme.social.gplus %}
     <li>
-        <a title="{{ site.theme.social.gplus }} on Google Plus" 
-            href="https://plus.google.com/{{ site.theme.social.gplus }}" 
+        <a title="{{ site.theme.social.gplus }} on Google Plus"
+            href="https://plus.google.com/{{ site.theme.social.gplus }}"
             class="ion-social-google" target="_blank"></a>
     </li>
     {% endif %}
 
     {% if site.theme.social.facebook %}
     <li>
-        <a title="{{ site.theme.social.facebook }} on Facebook" 
-            href="https://facebook.com/{{ site.theme.social.facebook }}" 
+        <a title="{{ site.theme.social.facebook }} on Facebook"
+            href="https://facebook.com/{{ site.theme.social.facebook }}"
             class="ion-social-facebook" target="_blank"></a>
     </li>
     {% endif %}
 
     {% if site.theme.social.dribble %}
     <li>
-        <a title="{{ site.theme.social.dribble }} on Dribble" 
-            href="https://dribbble.com/{{ site.theme.social.dribble }}" 
+        <a title="{{ site.theme.social.dribble }} on Dribble"
+            href="https://dribbble.com/{{ site.theme.social.dribble }}"
             class="dribble wc-img-replace" target="_blank">Dribble</a>
-    </li> 
+    </li>
     {% endif %}
 
     {% if site.theme.social.pinterest %}
     <li>
-        <a title="{{ site.theme.social.pinterest }} on Pinterest" 
-            href="https://www.pinterest.com/{{ site.theme.social.pinterest }}" 
+        <a title="{{ site.theme.social.pinterest }} on Pinterest"
+            href="https://www.pinterest.com/{{ site.theme.social.pinterest }}"
             class="pinterest wc-img-replace" target="_blank">Pinterest</a>
-    </li> 
+    </li>
     {% endif %}
 
     <li>
-        <a title="Subscribe via RSS" 
+        <a title="Subscribe via RSS"
             href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}"
-            class="ion-social-rss" target="_blank">
+            target="_blank">
+            <i class="ion-social-rss"></i>
         </a>
     </li>
 

@@ -6,15 +6,18 @@
 a, .post-title a { color: {{ site.theme.highlight_color }};}
 
 a:hover { border-bottom-color: {{ site.theme.highlight_color }};}
-.sidebar { background-color: {{ site.theme.highlight_color }};}
+/*.sidebar { background-color: {{ site.theme.highlight_color }};}*/
+/*.sidebar { background-image: url("http://www120.lunapic.com/do-not-link-here-use-hosting-instead/145178135561367?4154343074");}*/
+.sidebar { background-image: url("/assets/images/congruent_pentagon_purp.png");}
+
 
 .wc-top, .sidebar-toggle:active,
-#sidebar-checkbox:checked ~ .sidebar-toggle { 
+#sidebar-checkbox:checked ~ .sidebar-toggle {
   background-color: {{ site.theme.highlight_color }};
 }
 
 .sidebar a:hover, .sidebar .sidebar-nav a   {
-  border-bottom-color: lighten({{ site.theme.highlight_color }}, 5%); 
+  border-bottom-color: lighten({{ site.theme.highlight_color }}, 5%);
 }
 
 .sidebar .sidebar-nav {
@@ -31,10 +34,12 @@ a:hover { border-bottom-color: {{ site.theme.highlight_color }};}
 }
 
 .sidebar ul.social-media li>a {
-  color: white;
-  background-color: darken({{ site.theme.highlight_color }}, 3%);
-  border-color: lighten({{ site.theme.highlight_color }}, 5%); 
-  border-bottom-color: lighten({{ site.theme.highlight_color }}, 5%) !important;
+  color: {{ site.theme.social.color }};
+  font-size: {{ site.theme.social.size }};
+  /*background-color: darken({{ site.theme.highlight_color }}, 3%);*/
+  /*border-color: lighten({{ site.theme.highlight_color }}, 5%);*/
+  /*border-bottom-color: lighten({{ site.theme.highlight_color }}, 5%) !important;*/
+  border-bottom-color: lighten({{ site.theme.social.color }}, 5%)
 }
 
 .post ul.social-media li>a {

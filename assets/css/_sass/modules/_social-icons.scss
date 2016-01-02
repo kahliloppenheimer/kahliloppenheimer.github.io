@@ -1,19 +1,20 @@
 /*
- * Social media icons 
+ * Social media icons
  */
 
 ul.social-media {
 
-  li { 
+  li {
     padding-top: 2;
     padding-bottom: 2;
     padding-right: 10px;
     display:inline-block;
   }
-  
+
   li > a {
-    color: white;
-    background-color: white;
+    // color: {{ site.theme.social.color }};
+    // background-color: transparent;
+    // font-size: {{ site.theme.social.size }};
     // background-color: $color-1;
     // color: white;
     // background-color: white;
@@ -34,11 +35,11 @@ ul.social-media {
     margin-right: 30px;
     font-size: 35px;
   }
-    
+
 }
 
 /**
- * IE fallback 
+ * IE fallback
  */
 .no-svg footer.main-footer ul.social-media li a {
   width: 24px;
