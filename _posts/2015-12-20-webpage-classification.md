@@ -6,7 +6,7 @@ categories: nlp classification web-page
 ---
 [[READ THE FULL PAPER]][full-paper]
 
-![web classification demo image](http://www.kdnuggets.com/wp-content/uploads/text-analysis-acme2.jpg)
+![web classification demo image](/assets/images/text-classification.jpg)
 
 Predicting the topics of web-pages based on their textual content turns is interesting and difficult. There is a lot of existing research giving [broad overviews][overview] of what has been done, as well as specifics of particular techniques(i.e. [document summarization techniques][summarization] or [page hierarchy inference][neighbors]).
 
