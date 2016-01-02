@@ -1,7 +1,6 @@
 (function()
 {
     "use strict"
-    console.log('HERE')
 
     var scriptTag = document.currentScript;
     var loaded = false;
