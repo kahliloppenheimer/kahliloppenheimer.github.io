@@ -1,6 +1,7 @@
 (function()
 {
     "use strict"
+    console.log('HERE')
 
     var scriptTag = document.currentScript;
     var loaded = false;
@@ -100,6 +101,8 @@
             var iframe = this.iframe = document.createElement("iframe");
 
             iframe.src = scriptOrigin + "/e" + notebookQueryString;
+
+            console.log('iframe src = ' + iframe.src);
             iframe.style.height = (Math.max(100, initialHeight) + 50) + "px";
             iframe.style.width = "100%";
             iframe.style.width = "calc(100% + 200px)";
