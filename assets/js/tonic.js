@@ -69,9 +69,11 @@
                     else
                         canonicalParts = canonicalParts.concat(['branches', 'master']);
 
-                    fromNotebook = canonicalParts.join('/')
+                    fromNotebook = canonicalParts.join('/');
                 }
             }
+
+            console.log('LOCATION = ' + window.location.toString());
 
             var notebookQuery = {
                 name: name,
