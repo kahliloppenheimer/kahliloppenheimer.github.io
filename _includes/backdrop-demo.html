@@ -1,59 +1,11 @@
-<div id="notebook"></div>
-<!-- <script src="https://embed.tonicdev.com"></script> -->
-<script src="/assets/js/tonic-embed.js"></script>
-<script>
-var example = "var bd = require('text-backdrop');" + '\n' + "await bd('Donald Trump is running as the Republican candidate in 2016')";
-var notebook = Tonic.createNotebook({
-    // the parent element for the new notebook
-    element: document.getElementById("notebook"),
+<script src="https://embed.tonicdev.com" data-element-id="my-element"></script>
 
-    // specify the source of the notebook
-    source: example,
+<!-- anywhere else on your page -->
+<div id="my-element">
+function foo()
+{
+    return "hello world"
+}
 
-    // optionally, set the notebook to be read-only
-    readOnly: false,
-
-    // optionally, provide a callback to be called when the notebook has finished loading
-    onLoad: function(){}
-})
-</script>
-
-<!-- <script src="https://embed.tonicdev.com" data-element-id="backdrop-demo"></script>
-<div id="backdrop-demo">
-var bd = require('text-backdrop');
-await bd('Donald Trump is running as the Republican candidate in 2016')
-</div> -->
-<!--
-<script src="https://embed.tonicdev.com" data-element-id="backdrop-demo"></script>
-<script>
-        var example =  "var bd = require('text-backdrop');\nawait bd('Donald Trump is running as a Republican candidate for president in 2016')";
-        var packageInfo = {"name":"text-backdrop","keywords":[],"description":"Module to analyze meaning from text and send back relevant information about the text","version":"1.0.6","homepage":"","license":"ISC","readme":"<h1>Summary</h1>\n<p>Text-backdrop is a text-contextualization tool that takes a string and returns some relevant news, images, and wikipedia summaries. This module exports a single function which will take a string and return a promise that (when fulfilled) will return an object with contextual information (described below).</p>\n<h2>How to use</h2>\n<pre><code>var backdrop = require(&apos;text-backdrop&apos;);\nbackdrop(&apos;Donald Trump is running for president in 2016&apos;).then(console.log)\n</code></pre>\n<h2>Results</h2>\n<pre><code>{\n    original_text: &apos;Donald Trump is running for president in 2016&apos;\n    named_entities: {&apos;Donald Trump&apos;: {confidence: ...}}\n    textTags: {&apos;right_politics&apos;: .1244, &apos;energy&apos;: .0954, &apos;left_politics&apos;: .1674}\n    keywords: {&apos;2016&apos;: .2015, donald: .2385, trump: .2337}\n    news: [{title: &apos;Presidential Horse Race 2016....&apos;, url: ...}, {title: &apos;Election 2016: Donald Trump...&apos;, url: ...}, ...]\n    &apos;Donald Trump&apos;: {\n        images: ...\n        summary: &apos;Donald John Trump (born on June 14, 1946) is an American...&apos;\n    }\n}\n</code></pre>\n<h2>Explanation of Results</h2>\n<p>The results are a JSON object containing all extracted relevant information. We notice that the tool returns named entities (i.e. people, places, and organizations), categorical tags of the text, keywords from the text, relevant news (given the keywords), and images and a wikipedia summary for each named entity.</p>\n","canBeDirectlyRequired":true,"peerDependencies":{},"nodeEngine":""}
-        var peerDependencies = Object.keys(packageInfo.peerDependencies || { })
-
-        var source = "";
-        if (example) {
-            source = example;
-        } else {
-            source += (peerDependencies || []).map(function(dep) {
-                return "require(\"" + dep + "\")";
-            }).join("\n")
-
-            if (packageInfo.canBeDirectlyRequired) {
-                source += "require(\"" + packageInfo.name + "\")"
-            } else {
-                source += "// require(\"" + packageInfo.name + "/[??]\")"
-            }
-        }
-
-        function onURLChanged(newURL) {
-            history.pushState({}, document.title, newURL)
-        }
-
-        Tonic.createNotebook({
-            element: document.getElementById("npm-editor"),
-            source: source,
-            nodeVersion: packageInfo.nodeEngine,
-            onURLChanged: onURLChanged,
-            title: "tonic + npm: " + packageInfo.name
-        })
-    </script> -->
+foo();
+</div>
