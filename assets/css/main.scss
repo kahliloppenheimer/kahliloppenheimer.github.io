@@ -188,7 +188,7 @@ img {
 
 .container {
   width: 90%;
-  max-width: $M; // See breakpoints in css/_sass/helpers/_layout.scss
+  max-width: $M + 50; // See breakpoints in css/_sass/helpers/_layout.scss
   margin: 0 auto;
 
   &::after { /* Clearfix */
@@ -574,6 +574,7 @@ img {
   @include MQ(M) {
     font-size: 18px;
   }
+  margin-bottom: 0em;
 }
 
 /* Related post articles */
