@@ -8,10 +8,10 @@ banner_image: graphics_banner.jpeg
 
 Text-backdrop is the part of the project that analyzes the given source text and gathers additional information. It uses natural language processing techniques to extract relevant information of the text, then it *asynchronously* queries several APIs (wikipedia, Bing news/images, etc.) to aggregate and return all contextually relevant information in a single JSON document.
 
-# Try it out
+## Try it out
 {% include backdrop-demo.html %}
 
-# Where to find text-backdrop
+## Where to find text-backdrop
 Text-backdrop is available [on npm][npm-page], so you only need to `npm install text-backdrop` and you have it! It's also entirely open source, and can be found [on github][github-repo].
 
 
