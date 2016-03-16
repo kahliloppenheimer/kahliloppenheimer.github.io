@@ -16,6 +16,7 @@ baseurl:          /
 author:
   name:           'Kahlil Oppenheimer'
   url:            https://linkedin.com/in/kahliloppenheimer
+  descriptions: 'programmer student author dota-er'
 
 gems: [jekyll-paginate]
 paginate:         5
@@ -26,9 +27,9 @@ version:          2.1.0
 
 # if you don't have any of social below, comment the line
 facebook: kahliloppenheimer
-# twitter: uneditedjustice
+twitter: uneditedjustice
 # google: mygoogle
-# instagram: myinstagram
+instagram: myinstagram
 # pinterest: mypinterest
 linkedin: kahliloppenheimer
 #youtube: myyoutube
