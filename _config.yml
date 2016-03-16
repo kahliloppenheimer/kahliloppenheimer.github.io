@@ -1,69 +1,38 @@
-# Site settings
-# Not a typo--the logo is the K
-title: ahlil.me
-tagline: tech blog
-email: kahliloppenheimer@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-    "Computer science is no more about computers than astronomy is about telescopes." - Dijkstra
-baseurl: "" # the subpath of your site, e.g. /blog/
-# url: "http://kahlil.me" # the base hostname & protocol for your site
-logourl: /assets/images/logo.png # Site logo
-author: "Kahlil Oppenheimer"
-author_thumbnail: "/assets/images/avatar.jpg" # Author avatar
-# Theme customization - please change from the defaults!
-theme:
-  # Color for sidebar bar, links, etc
-  highlight_color: "#6600CC" #205081 #205081" # "#272935"
-  # Social media links, leave blank to ignore
-  social:
-    # Color of all logos
-    color: black
-    # Size of all logos (font size)
-    size: x-large
-    github: kahliloppenheimer
-    linkedIn: kahliloppenheimer
-    twitter:
-    facebook:
-    gplus:
-    # dribble:
-    pinterest:
-
-  # Enable share buttons on post footer
-  show_share_buttons: true
-
-  # Show author picure, name and social links on post footer
-  show_author_info: true
-
-  # Disqus comments manager - shortname
-  disqus_shortname: Kahlil
-
-  # Google Analytics/Webmaster key, leave blank to ignore
-  google_analytics_key: UA-65292043-1
-  google_webmaster_key:
-
-# Build settings
-markdown: kramdown
+# Dependencies
+markdown:         kramdown
+highlighter:      rogue
 
 # Permalinks
 permalink:        pretty
+# relative_permalinks: true
 
-# Pagination config
-paginate: 5
+# Setup
+title:            Kahlil.me
+tagline:          'Tech blog'
+description:      '"Computer Science is no more about computers than astronomy is about telescopes" -Dijkstra'
+url:              http://kahlil.me
+baseurl:          /
 
-# Set to true to only show small excerpt of each post
-excerpt_posts: false
+author:
+  name:           'Kahlil Oppenheimer'
+  url:            https://linkedin.com/in/kahliloppenheimer
 
-# Files/Folders to be excluded from generated _site folder
-exclude:
-  - CNAME
-  - Gemfile
-  - Rakefile
-  - README.md
-  - .gitignore
-  - .sass-cache
-  - Gemfile.lock
+gems: [jekyll-paginate]
+paginate:         5
+paginate_path: "page:num"
 
-# Sass conversion configs
-sass:
-  sass_dir: assets/css/_sass
-  style: :compressed
+# Custom vars
+version:          2.1.0
+
+# if you don't have any of social below, comment the line
+facebook: kahliloppenheimer
+# twitter: uneditedjustice
+# google: mygoogle
+# instagram: myinstagram
+# pinterest: mypinterest
+linkedin: kahliloppenheimer
+#youtube: myyoutube
+# spotify: https://open.spotify.com/user/1243784232
+github: kahliloppenheimer
+#medium: medium
+email: kahliloppenheimer@gmail.com

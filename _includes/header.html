@@ -1,6 +1,9 @@
 <div class="sidebar">
-  <div class="header-home container sidebar-sticky">
+  <div class="container sidebar-sticky">
     <div class="sidebar-about">
+      <a class ="link" href="{{ site.url }}">
+        <img class="selfie" alt="{{ site.name }}" src="https://lh3.googleusercontent.com/-v6k-X2JGVdo/AAAAAAAAAAI/AAAAAAAAAxg/HA6Y0KFLXpM/s160-c-k-no/photo.jpg">
+      </a>
       <h1>
         <a href="{{ site.baseurl }}">
           {{ site.title }}
@@ -8,9 +11,8 @@
       </h1>
       <p class="lead">{{ site.description }}</p>
     </div>
-
     <nav class="sidebar-nav">
-      <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Home</a>
+      <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Blog</a>
 
       {% comment %}
         The code below dynamically generates a sidebar nav of pages with
@@ -20,17 +22,12 @@
       {% assign pages_list = site.pages %}
       {% for node in pages_list %}
         {% if node.title != null %}
-          {% if node.layout == "page" %}
+          {% if node.layout == "page" || node.title == "Blog" %}
             <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
           {% endif %}
         {% endif %}
       {% endfor %}
-
-      <a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">Download</a>
-      <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a>
-      <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
     </nav>
-
-    <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
+    {% include social-links.html %}
   </div>
 </div>
