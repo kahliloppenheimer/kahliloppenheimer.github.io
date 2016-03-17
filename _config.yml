@@ -16,7 +16,24 @@ baseurl:          /
 author:
   name:           'Kahlil Oppenheimer'
   url:            https://linkedin.com/in/kahliloppenheimer
-  descriptions: 'programmer student author dota-er'
+
+
+# Descriptions to shuffle through on about page
+about-descriptions:
+    - 'computer scientist'
+    - 'lifelong vegetarian'
+    - 'Brandeis student'
+    - 'machine learning enthusiast'
+    - 'Square 2016 intern'
+    - 'nodeJS experimenter'
+    - 'dota gamer'
+    - 'teaching assistant'
+    - 'sailboat skipper'
+    - 'KAYAK 2015 intern'
+    - 'abstract algebraist'
+    - 'wannabe journalist'
+    - 'loop-pedal-er'
+    - 'HP Vertica 2014 intern'
 
 gems: [jekyll-paginate]
 paginate:         5
@@ -29,7 +46,7 @@ version:          2.1.0
 facebook: kahliloppenheimer
 twitter: uneditedjustice
 # google: mygoogle
-instagram: myinstagram
+# instagram: myinstagram
 # pinterest: mypinterest
 linkedin: kahliloppenheimer
 #youtube: myyoutube
