@@ -248,3 +248,8 @@ a.sidebar-nav-item:focus {
 .theme-base-0f .related-posts li a:hover {
   color: #8f5536;
 }
+
+/* Resume page */
+.linkwrap { position:relative; display:inline-block; }
+.blocker { position:absolute; height:100%; width:100%; z-index:1 }
+.linkwrap iframe { z-index: 2; }
