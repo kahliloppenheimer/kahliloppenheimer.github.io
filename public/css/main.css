@@ -263,17 +263,12 @@ a.sidebar-nav-item:focus {
 .linkwrap iframe { z-index: 2; }
 
 /* Resume sizing */
-@media (min-width: 1020px) {
-    .resume-iframe {
-        min-width: 725px;
-        min-height: 931px;
-    }
-}
+
 
 @media (min-width: 319px) {
     .resume-iframe {
-        min-width: 297;
-        min-height: 380;
+        min-width: 297px;
+        min-height: 383px;
     }
 }
 
@@ -281,5 +276,12 @@ a.sidebar-nav-item:focus {
     .resume-iframe {
         min-width: 350px;
         min-height: 448px;
+    }
+}
+
+@media (min-width: 1020px) {
+    .resume-iframe {
+        min-width: 725px;
+        min-height: 931px;
     }
 }
