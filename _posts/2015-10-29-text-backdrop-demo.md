@@ -2,7 +2,6 @@
 layout: post
 title: "Text-backdrop: contextualize any text"
 categories: projects nodejs npm nlp
-banner_image: graphics_banner.jpeg
 ---
 [Text-backdrop][github-repo] is a tool I developed as my contribution to to [Well Versed][hackdart], a hackathon project that **won third place** at Hack Dartmouth 2015. Well Versed is a browser extension that, when activated, aggregates all relevant information about the topic of the current web-page and displays it all in a sidebar. Thus, anyone can become *well versed* about any topic they are perusing--politics, science, etc.
 
