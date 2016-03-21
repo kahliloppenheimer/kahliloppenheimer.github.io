@@ -31,6 +31,11 @@
  * Update the foundational and global aspects of the page.
  */
 
+body {
+    padding: 0;
+    margin: 0;
+}
+
 html {
   font-family: "PT Sans", Helvetica, Arial, sans-serif;
 }
@@ -54,7 +59,7 @@ html {
  */
 
 .sidebar {
-  text-align: left;
+  text-align: center;
   padding: 2rem 1rem;
   color: rgba(255,255,255,.5);
   background-color: #202020;
@@ -67,7 +72,7 @@ html {
     left: 0;
     bottom: 0;
     width: 18rem;
-    text-align: left;
+    text-align: center;
   }
 }
 

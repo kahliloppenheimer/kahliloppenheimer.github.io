@@ -9,10 +9,10 @@
   margin-left: auto;
   margin-right: auto;
 }
-.link > .selfie:hover {
+/*.link > .selfie:hover {
   box-shadow: 0 0px 4px 0 rgba(0,0,0,0.18), 0 0px 12px 0 rgba(0,0,0,0.15);
   opacity: 0.8;
-}
+}*/
 
 .social-links > .link {
   margin: 0;
@@ -20,12 +20,12 @@
   position: relative;
   display: inline-block;
   height: 35px;
-  width: 35px;
+  width: 30px;
 }
 .social-links > .link:hover > .icon {
   fill: #4b0082;
 }
-.social-links > .link:hover:before {
+/*.social-links > .link:hover:before {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
@@ -72,7 +72,7 @@
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
-}
+}*/
 .social-links > .icon {
   -webkit-transition: all ease-in-out 0.2s;
           transition: all ease-in-out 0.2s;
