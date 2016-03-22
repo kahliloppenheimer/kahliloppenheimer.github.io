@@ -25,6 +25,7 @@
 .social-links > .link:hover > .icon {
   fill: #4b0082;
 }
+/* Pop up
 /*.social-links > .link:hover:before {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);

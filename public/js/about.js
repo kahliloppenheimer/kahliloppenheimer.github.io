@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
     shuffleList('#about-desc-list');
     $('.about-desc').textillate(
         {

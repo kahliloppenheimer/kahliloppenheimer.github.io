@@ -132,6 +132,11 @@ a.sidebar-nav-item:focus {
   padding-bottom: 4rem;
 }
 
+.Resume-page {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
 @media (min-width: 48em) {
   .content {
     max-width: 38rem;
@@ -263,8 +268,6 @@ a.sidebar-nav-item:focus {
 .linkwrap iframe { z-index: 2; }
 
 /* Resume sizing */
-
-
 @media (min-width: 319px) {
     .resume-iframe {
         min-width: 297px;
