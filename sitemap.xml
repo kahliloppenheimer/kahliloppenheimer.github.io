@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>https://www.kahlil.me/</loc>
+  <lastmod>2016-09-28T13:06:27+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://www.kahlil.me/about/</loc>
+  <lastmod>2016-09-28T13:06:27+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://www.kahlil.me/resume/</loc>
+  <lastmod>2016-09-28T13:06:27+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://www.kahlil.me/nlp/classification/web-page/2015/12/20/webpage-classification/</loc>
+  <lastmod>2016-09-28T13:06:27+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://www.kahlil.me/projects/nodejs/npm/nlp/2015/10/29/text-backdrop-demo/</loc>
+  <lastmod>2016-09-28T13:06:27+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://www.kahlil.me/tutorial/java8/2015/07/23/java-8-find-with-streams/</loc>
+  <lastmod>2016-09-28T13:06:27+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://www.kahlil.me/tutorial/java8/2015/07/22/java-8-grep-with-streams/</loc>
+  <lastmod>2016-09-28T13:06:27+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://www.kahlil.me/guide/java/2015/07/18/java-8-stream-sql/</loc>
+  <lastmod>2016-09-28T13:06:27+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+</urlset>
