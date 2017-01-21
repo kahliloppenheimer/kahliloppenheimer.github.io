@@ -17,7 +17,7 @@ Let's say we have a list of key-value pairs defined to mark the number of bugs t
 
 {% highlight java %}
 // Lets use a stream in an SQL-esque kind of way
-        List<SimpleEntry<String, Integer>> bugTable = 
+        List<SimpleEntry<String, Integer>> bugTable =
 new ArrayList<SimpleEntry<String, Integer>>();
         bugTable.add(new SimpleEntry<>("Arthur", 2));
         bugTable.add(new SimpleEntry<>("Kahlil", 8));
