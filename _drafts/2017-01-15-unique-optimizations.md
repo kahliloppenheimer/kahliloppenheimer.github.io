@@ -7,46 +7,61 @@ categories: query-optimization database patent sql vertica
 
 [![Image of word 'Patented'](/assets/images/patented.png)][patent]
 
-During the first week of my internship at Vertica, my mentor assigned a small bug for me to fix. But, after fixing this bug, I realized something fantastic. I realized that the scope of what I was working on was much larger. The original bug was about optimizing certain SQL queries on auto-incrementing columns, but I realized these optimizations could be applied to any column (or set of columns) that were guaranteed to be unique.
+During the first week of my internship at Vertica, my mentor assigned a small bug for me to fix about a small set of very specific SQL queries. After writing a simple fix for this bug, however, I realized something fantastic. I realized that the scope of what I was working on was much larger. This bug was just a special case of something much larger. I was captivated.
 
-For the remainder of the summer, I went on to discover, design, implement, and [patent][patent] novel query optimization techniques specific to unique columns. These techniques identify then leverage uniqueness to cut out certain expensive operations like sorts, groups, and joins. Let's see how this all works.
+For the remainder of the summer, I expanded what I had discovered as far as I could. To make things a bit more concrete, I was trying to optimize queries that operated on unique columns (more on exactly what that means soon). By the end of the summer, I had designed, implemented, and [patented][patent] these optimization techniques. The basic idea is to first identify uniqueness, then leverage that uniqueness to cut out expensive operations like sorts, groups, and joins. Let's see how this all works.
 
 ## Defining and identifying uniqueness
 I'll first define uniqueness and talk about how we can determine which columns are unique.
 
 A relational database consists of *tables* (or relations), and each relation consists of *columns* (or attributes). We call a column unique if it contains no duplicate values. That is to say that a column containing the values `['cat', 'dog', 'pig']` is unique while a column containing the values `['cat', 'dog', 'cat']` is **not** unique. We call a set of columns unique if there are no two rows in the set that have the same values for all columns. As an example `[('car', 'red'), ('car', 'blue'), ('truck, brown')]` is unique, while `[('car', 'red'), ('car', 'red'), ('truck, brown')]` is not.
 
-So how do we identify unique columns or sets of columns within our database? Our first thought might be to just write an algorithm to read through the data and check to see if a particular column contains duplicate values. This, however, will not be very performant because we're going to need to re-read all of the data every time we insert/update a row. This approach will simply not work with the majority of Vertica database instances, which tend to be on the scale of hundreds of *gigabytes* (GB) or *terabytes* (TB) in size.
+So how do we identify unique columns or sets of columns within our database? Our first thought might be to just write an algorithm to read through the data and check to see if a particular column contains duplicate values. This, however, will not be very performant because we're going to need to re-read all of the data every time we insert/update a row. This approach will simply not work for any common analytics databases, which tend to be on the scale of hundreds of *gigabytes* (GB) or *terabytes* (TB) in size.
 
-Our next thought might be to look at our schema, i.e. our data definition language (DDL) constraints. We could just check for columns that are *primary keys* or are annotated with the *SQL unique constraint*. If you have a database that enforces these integrity constraints (i.e. that will throw an error if you try to insert duplicate values into one of these columns), then you are good to go. However, to increase performance, Vertica does not enforce any of these integrity constraints. For this reason, we cannot rely upon these DDL constraints.
+Our next thought might be to look at our schema, i.e. our data definition language (DDL) constraints. We could just check for columns that are *primary keys* or are annotated with the *SQL UNIQUE constraint*. If you have a database that enforces these integrity constraints (i.e. that will throw an error if you try to insert duplicate values into one of these columns), then you are good to go. However, at Vertica I unfortunately had very few such guarantees. As a decision to increase performance, Vertica does not enforce the majority of these integrity constraints. For this reason, I could rely upon *primary key* and *SQL UNIQUE constraints*.
 
-There is one DDL constraint, however, that we can trust. Vertica supports an auto-incrementing column called an *identity* column. This column will definitely be unique because users are not allowed to modify it.
+There is one DDL constraint, however, I did have. Like many databases, Vertica supports an auto-incrementing column called an *identity* column. This *identity* column will definitely be unique because users are not allowed to modify it.
 
-But there is another side to this. We can also determine uniqueness on a per-query, rather than per-table basis. Consider the query `SELECT DISTINCT a FROM foo;`. The result of this query is unique on the attribute `a`. Consider the query `(SELECT a, b FROM foo) UNION (SELECT a, b FROM bar);`. The result of this query is unique on the set of attributes `{a, b}`. Also consider `SELECT a, COUNT(a) FROM foo GROUP BY a;`. The result of this query is also unique on the attribute `a`.
+But, let's take a step back. Let's imagine that we did not even have this *identity* column. So our database does not enforce *primary keys* or *SQL UNIQUE constraints*, and we do not have any sort of auto-incrementing column. Can we guarantee any uniqueness at all? **Yes we can**. Let's look at how.
 
-Now, suppose we have two unique columns in separate tables and we perform an inner join between them. The query might look something like `SELECT foo.a, bar.c FROM foo INNER JOIN bar ON foo.b=bar.b;`. In this case, let's assume that we have already determined that `foo.a` and `bar.b` are unique (i.e. they are both *identity* columns, or are the results of subqueries using operators like `SELECT DISTINCT`). If both sides are unique, then this inner join will preserve uniqueness. Why? Well, the only way that an inner join *won't* preserve uniqueness is if a row from one side matches with multiple rows from the other side of the join. But since both sides of the join are unique, a row can only match with at most one row from the other side.
+The first novel component of my work is how to determine uniqueness on a per-query basis, without needing to know DDL constrained uniqueness. Consider the query `SELECT DISTINCT a FROM foo;`. The result of this query is unique on the attribute `a`. Consider the query `(SELECT a, b FROM foo) UNION (SELECT a, b FROM bar);`. The result of this query is unique on the set of attributes `{a, b}`. Also consider `SELECT a, COUNT(a) FROM foo GROUP BY a;`. The result of this query is also unique on the attribute `a`.
 
-There are other variations of joins that preserve uniqueness as well, such as certain semi-joins and non-null preserving outer-joins. But the idea is essentially the same as inner joins.
+Now, imagine that these queries are actually subqueries that feed their results into outer queries. In the simplest case, imagine something like `SELECT a FROM (SELECT DISTINCT a FROM foo)`. Here it is clear that in the outer query, `a` will be unique. But how is that uniqueness propagated through more complicated events like joins? Let's dig in.
 
-It is worth noting that all of these techniques can be applied even in very complicated situations. Imagine a complicated nested query situation like this:
+Consider two unique columns in separate tables between which we would like to perform an inner join. The query might look something like `SELECT foo.a, bar.c FROM foo INNER JOIN bar ON foo.b=bar.b;`. In this case, let's assume that we have already determined that `foo.a` and `bar.b` are unique (i.e. there is an enforced DDL constraint on them, or they are the results of subqueries using operators like `SELECT DISTINCT`).
+
+If both sides of the join are unique, then this inner join will preserve uniqueness. Why? Well, the only way that an inner join *won't* preserve uniqueness is if a row from one side matches with multiple rows from the other side of the join. But since both sides of the join are unique, a row can only match with at most one row from the other side. If each row can only match with at most one row from the other side, either each row shows up one or zero times in our result. Since each of these rows were unique on these columns before, uniqueness on those columns is preserved.
+
+There are other variations of joins that preserve uniqueness as well, such as certain semi-joins and non-null preserving outer-joins. But, the idea is essentially the same as inner joins, so we will only focus on inner joins.
+
+Now that we can determine some forms of uniqueness through clauses like `SELECT DISTINCT` or `UNION` or `GROUP BY`, and we can see how this uniqueness propagates through joins, let's consider a slightly more complicated situation. Consider this nested set of queries.
 
 ```
 SELECT baz.a
 FROM (
-    SELECT bar.a
-    FROM (
-      SELECT DISTINCT foo.a
-      FROM foo;
+  SELECT bar.a
+  FROM
+  (
+    SELECT DISTINCT foo.a
+    FROM foo;
+  ) foo
+  INNER JOIN
+  (
+    SELECT DISTINCT bar.a
+    FROM bar;
   ) bar
 ) baz
 ```
-Here, we can see that the uniqueness of the attribute `a` propagates upwards all the way from the inner most `SELECT DISTINCT` to the outer `SELECT` statement. This can of course get more complicated with more layers of nesting and more complex operators like joins. But, we can just recursively apply the heuristics we defined above to determine the uniqueness at the top level of the query. We start by diving down and determining uniqueness at the innermost levels, then traversing the query and seeing (either through joins or other operators), how that uniqueness is preserved.
+
+Let's try to analyze how the uniqueness is propagated. Starting at the innermost parts, we see that `foo.a` and `bar.a` are unique because we are using a `SELECT DISTINCT` operator. We are then performing an inner join on these attributes, which means the result is still unique on these attributes. Finally, we are just renaming our result as `baz` then selecting `baz.a`. The end result of this analysis is that we can see at each stage of our query which columns are unique, and that in this case, the uniqueness propagates all the way upwards to `baz.a`.
+
+While it is cool to see how uniqueness is preserved at the outermost layers, it is actually equally important to see how it is preserved in the inner layers of the query as well (i.e. `bar.a` after the join). This is because our optimizations we are about to describe are applied recursively to all layers of our query, not just the outermost ones.
 
 It takes a bit of work, but ultimately we can take an arbitrary query and annotate all the places where we have unique columns. Now, let's figure out what we can do with that uniqueness.
 
 ## Optimizing from uniqueness
 
-During my internship, I discovered four optimizations that leverage uniqueness of columns. I suspect that more exist, and could perhaps be the product of future research and experimentation.
+During my internship, I discovered four optimizations that leverage uniqueness of columns. I suspect that my list is not exhaustive, and that my findings could be the basis for additional research.
 
 ### Order by optimization
 Let's say you want to sort the results of a query. Moreover, let's say you want to sort by multiple attributes. If one of these attributes is unique, then you need not sort past it.
