@@ -2,6 +2,7 @@
 layout: post
 title: "Optimizing queries by leveraging uniqueness"
 date: 2017-01-15
+permalink: /unique-attributes/
 categories: query-optimization database patent sql vertica
 ---
 
