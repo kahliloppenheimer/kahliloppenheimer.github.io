@@ -1,0 +1,208 @@
+% resume.tex
+%
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003 David J. Grant <dgrant@ieee.org> http://www.davidgrant.ca
+% (c) 2007 Todd C. Miller <Todd.Miller@courtesan.com> http://www.courtesan.com/todd
+% (c) 2009-2012 Derek R. Hildreth <derek@derekhildreth.com> http://www.derekhildreth.com
+%This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/1.0/ or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.
+
+% GENERAL NOTE:  There may be some notes specific to myself.  If you're only interested in my LaTeX source or it doesn't make sense, please disregard it.
+
+\documentclass[letterpaper,11pt]{article}
+
+%-----------------------------------------------------------
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage[pdftex]{hyperref}
+\hypersetup{
+    colorlinks,%
+    citecolor=black,%
+    filecolor=black,%
+    linkcolor=black,%
+    urlcolor=black
+    %urlcolor=mygreylink     % can put red here to better visualize the links
+}
+\urlstyle{same}
+\definecolor{mygrey}{gray}{.85}
+\definecolor{mygreylink}{gray}{.40}
+\textheight=9.0in
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{0.375in}
+\addtolength{\textwidth}{0.5in}
+\addtolength{\topmargin}{-.375in}
+\addtolength{\textheight}{0.75in}
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{{\large \colorbox{mygrey}{\begin{minipage}{\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{6.5in}{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{-6pt}}
+
+\newcommand{\ressubsubheading}[2]{
+\begin{tabular*}{6.5in}{l@{\extracolsep{\fill}}r}
+		\textit{#1} & \textit{#2} \\
+\end{tabular*}\vspace{-6pt}}
+%-----------------------------------------------------------
+
+%-----------------------------------------------------------
+%General Resume Tips
+%   No periods!  Technically, nothing in this document is a full sentence.
+%   Use parallelism by ending key words with the same thing,  i.e. "Coordinated; Designed; Communicated".
+%   More tips on bottom of this LaTeX document.
+%-----------------------------------------------------------
+
+\begin{document}
+
+\newcommand{\mywebheader}{
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+	\textbf{\LARGE \href{https://kahlil.me}{Kahlil Oppenheimer}} & {kahliloppenheimer@gmail.com} \\
+38 Hanson Street, Somerville MA 02143 & (857-544-1227) \\
+	\end{tabular*}
+\\
+\vspace{0.1in}}
+
+% CHANGE HEADER SOURCE HERE
+\mywebheader
+
+%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Education}
+	\begin{itemize}
+		\item
+			\ressubheading{Brandeis University}{Waltham, MA}{B.S. in Computer Science and Mathematics; GPA:3.79}{Jan 2017}
+				{ \footnotesize
+				\begin{itemize}
+                    \resitem{Honors: Phi Beta Kappa, Giumette Academic Achievement Award, Henry F. Fischbach Scholarship}
+					\resitem{Key Courses: Modern Database Systems, Distributed Systems, Statistical Approaches to NLP}
+				\end{itemize}
+				}
+	\end{itemize} % End Education list
+
+%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Experience}
+	\begin{itemize}
+	
+	    \item
+            \ressubheading{HubSpot}{Cambridge, MA}
+			{Software Engineer - Big Data Team}{Jan 2017 -- Present}
+			{\footnotesize
+			\begin{itemize}
+                \resitem{Write new HBase features and patch existing bugs}
+                \resitem{Wrote and open-sourced new HBase load balancer to remove table skew (HBASE-17707)}
+			\end{itemize}
+			}
+	    \item
+            \ressubheading{Brandeis University Computer Science Department}{Waltham, MA}
+			{Undergraduate Teaching Assistant}{Nov 2013 -- Present}
+			{\footnotesize
+			\begin{itemize}
+                \resitem{Statistical Approaches to Natural Language Processing}
+                \resitem{Database Management Systems}
+			\end{itemize}
+			}
+
+		\item
+            \ressubheading{Square}{San Francisco, CA}
+            {Software Engineering Intern -- Register Experience}{May 2016 -- August 2016}
+            {\footnotesize
+            \begin{itemize}
+                \resitem{Work on Java/Ruby/Go web back-end of Register app}
+                \resitem{Built search functionality for EMV cards and tap-to-pay methods}
+                \resitem{Designed and implemented custom-made QR-like code reader}
+            \end{itemize}
+            }
+
+	    \item
+            \ressubheading{KAYAK}{Concord, MA}
+            {Software Engineering Intern -- Accuracy Team}{May 2015 -- Aug 2015}
+            {\footnotesize
+            \begin{itemize}
+                \resitem{Built Java web scraper services to verify car rental prices}
+            \end{itemize}
+            }
+
+		\item
+			\ressubheading{HP Vertica}{Cambridge, MA}
+			{Software Engineering Intern -- SQL Optimizer Team}{May 2014 -- Aug 2014}
+			{ \footnotesize
+			\begin{itemize}
+				\resitem{Designed and implemented new features in the Vertica query optimizer}
+			\end{itemize}
+			}
+		\item
+			\ressubheading{Draper Laboratories}{Cambridge, MA}
+			    {Systems Test and Integration Intern}{Jun 2013 -- Aug 2013}
+				{ \footnotesize
+				\begin{itemize}
+					\resitem{Automated analysis and anomoly detection for large data sets with VBA}
+				\end{itemize}
+				}
+
+	\end{itemize}  % End Experience list
+
+
+\resheading{Projects}
+    \begin{itemize}
+    
+        \setlength\itemsep{1em}
+    
+        \item
+            \ressubheading{HBase load balancer open-source contributions}{June 2017}
+            {\footnotesize
+            \begin{itemize}
+                \resitem{Presenting at HBaseCon 2017 on rewriting key components of the load balancer}
+            \end{itemize}
+            }
+    
+		\item
+            \ressubheading{\href{https://www.google.com/patents/WO2016159936A1?cl=en}{SQL Query Optimization} Patent (\href{https://www.google.com/patents/WO2016159936A1?cl=en}{PCT/US2015/023044})}{October 2016}
+		    {\footnotesize
+		    \begin{itemize}
+		        \resitem{Read details at \url{https://kahlil.me/unique-attributes}}
+		    \end{itemize}
+		    }
+
+        \item
+            \ressubheading{\href{https://devpost.com/software/well-versed}{Well-Versed Chrome Extension}}{October 2015}
+		    {\footnotesize
+		    \begin{itemize}
+		        \resitem{Won third place at HackDartmouth II (details at
+		        \url{https://devpost.com/software/well-versed})}
+		    \end{itemize}
+		    }
+
+		\item
+            \ressubheading{\href{https://kahlil.me}{https://kahlil.me}}{Technical blog}
+		    {\footnotesize
+		    \begin{itemize}
+		        \resitem{Write about current and past technical projects}
+		    \end{itemize}
+		    }
+
+
+	\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Skills}
+	\begin{description}
+		\item[Programming Languages:] { \footnotesize
+			Java, Go, Python, Javascript, Ruby, C/C++, SQL, Bash, Scheme
+		}
+		\item[Technologies:] { \footnotesize
+			HBase, HDFS, Grpc, Guice, Mockito, Node.js, MapReduce, Mallet
+		}
+	\end{description} % End Skills list
+
+%\end{description}
+
+\end{document}
