@@ -10,7 +10,7 @@ permalink:        pretty
 title:            Kahlil.me
 tagline:          'Tech blog'
 description:      '"Computer Science is no more about computers than astronomy is about telescopes" -Dijkstra'
-url:              http://kahlil.me
+url:              https://kahlil.me
 baseurl:          /
 
 author:
