@@ -10,6 +10,8 @@ categories: query-optimization database patent sql vertica
 
 During the first week of my internship at Vertica, my mentor assigned a small bug for me to fix about a set of particular SQL queries. After writing a simple fix for this bug, however, I realized something fantastic. I realized that the scope of what I was working on was much larger. This bug was just a special case of something much larger. I was captivated.
 
+<!--more-->
+
 For the remainder of the summer, I expanded what I had discovered as far as I could. To make things a bit more concrete, I was trying to optimize queries that operated on unique columns (more on exactly what that means soon). By the end of the summer, I had designed, implemented, and submitted a [patent][patent] for these optimization techniques. The patent was just recently published in October 2016, over two years later.
 
 This blog post is my best attempt to explain my work and hopefully convey some of my excitement for what I found.

@@ -9,6 +9,8 @@ banner_image: xkcd_streams.png
 ## Intro
 We're going to look at an example of how to represent SQL queries over java collections using streams from Java 8. Pretty cool right?
 
+<!--more-->
+
 ## Pre-reqs
 This post assumes you have some familiarty with basic SQL and Java 8 lambda expressions and streams.
 

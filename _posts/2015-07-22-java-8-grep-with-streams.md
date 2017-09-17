@@ -9,6 +9,8 @@ banner_image: grep.png
 ## Intro
 We're going to write our very own `grep` command using Java 8 streams. By the end, we will be able to run it on the command line, just like the normal UNIX grep program.
 
+<!--more-->
+
 ## Pre-reqs
 This post assumes you have some familiarity with Java 8 streams and a basic understanding of regular expressions. We're actually going to review `grep`, so it's ok if you do not yet know it.
 
@@ -18,7 +20,7 @@ This post assumes you have some familiarity with Java 8 streams and a basic unde
 For example,
 
 {% highlight bash %}
-grep .*public.* MyJavaClass.java 
+grep .*public.* MyJavaClass.java
 {% endhighlight %}
 
 might yield

@@ -42,6 +42,10 @@ gems: [jekyll-paginate]
 paginate:         5
 paginate_path: "page:num"
 
+excerpt_posts: true
+
+excerpt_separator: <!--more-->
+
 # Custom vars
 version:          2.1.0
 

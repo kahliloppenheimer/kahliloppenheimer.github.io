@@ -9,6 +9,8 @@ banner_image: find.png
 ## Intro
 In this guide, we're going to write our very own simplified `find` command using Java 8 streams. By the end we will be able to run it from the command line, just like the unix find program.
 
+<!--more-->
+
 ## Pre-reqs
 This post assumes you at least a little familiar with Java 8 streams and regular expressions. We're actually going to review `find`, so it's ok if you do not yet know it.
 
