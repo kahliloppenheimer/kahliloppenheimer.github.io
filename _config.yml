@@ -10,13 +10,12 @@ permalink:        pretty
 title:            Kahlil.me
 tagline:          'Tech blog'
 description:      '"Computer Science is no more about computers than astronomy is about telescopes" -Dijkstra'
-url:              http://kahlil.me
+url:              https://kahlil.me
 baseurl:          /
 
 author:
   name:           'Kahlil Oppenheimer'
   url:            https://linkedin.com/in/kahliloppenheimer
-
 
 # Descriptions to shuffle through on about page
 about-descriptions:
@@ -38,7 +37,7 @@ about-descriptions:
     - 'HbaseCon 2017 Speaker'
     - 'java microservice explorer'
 
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 paginate:         5
 paginate_path: "page:num"
 
