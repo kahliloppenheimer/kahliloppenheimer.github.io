@@ -10,7 +10,7 @@ permalink:        pretty
 title:            Kahlil.me
 tagline:          'Tech blog'
 description:      '"Computer Science is no more about computers than astronomy is about telescopes" -Dijkstra'
-url:              http://kahlil.me
+url:              https://kahlil.me
 baseurl:          /
 
 
@@ -20,6 +20,7 @@ author:
 
 # Descriptions to shuffle through on about page
 about-descriptions:
+    - 'Googler'
     - 'computer scientist'
     - 'lifelong vegetarian'
     - 'Brandeis University graduate'
@@ -38,7 +39,10 @@ about-descriptions:
     - 'HbaseCon 2017 Speaker'
     - 'java microservice explorer'
 
-plugins: [jekyll-paginate]
+plugins: 
+    - jekyll-paginate
+    - amp-jekyll
+
 paginate:         5
 paginate_path: "page:num"
 
@@ -51,9 +55,9 @@ version:          2.1.0
 
 # if you don't have any of social below, comment the line
 facebook: kahliloppenheimer
-twitter: uneditedjustice
+# twitter: uneditedjustice
 # google: mygoogle
-# instagram: myinstagram
+instagram: kdawg4lyfe
 # pinterest: mypinterest
 linkedin: kahliloppenheimer
 #youtube: myyoutube
@@ -61,3 +65,6 @@ linkedin: kahliloppenheimer
 github: kahliloppenheimer
 #medium: medium
 email: kahliloppenheimer@gmail.com
+
+# Amp setup
+ampdir: amp

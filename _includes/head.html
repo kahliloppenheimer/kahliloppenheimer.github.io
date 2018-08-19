@@ -9,6 +9,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   {% include google_analytics.html %}
 
+  <!-- Setup amp-jekyll amp linking logic-->
+  {% if page.path contains '_posts' %}
+    {% unless page.skip_amp %}
+      <link rel="amphtml" href="{{ page.id | prepend: '/amp' | prepend: site.baseurl | prepend: site.url }}">
+    {% endunless %}
+  {% endif %}
+
   <title>
     {% if page.title == "Home" %}
       {{ site.title }} &middot; {{ site.tagline }}
