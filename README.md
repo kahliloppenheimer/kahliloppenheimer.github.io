@@ -1,6 +1,6 @@
-# Install
+# Install Dependencies
 ```
-bundle exec jekyll build
+bundle install
 ```
 
 # Run locally
