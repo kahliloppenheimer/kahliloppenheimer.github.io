@@ -4,6 +4,7 @@ layout: amp
 <!doctype html>
 <html amp lang="en">
   <head>
+    {% include amp-head.html %}
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
     <link rel="canonical" href="{{ page.canonical_url | prepend: site.baseurl | prepend: site.url }}" />
@@ -19,13 +20,13 @@ layout: amp
     <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
-{% capture header %}{% include head.html %}{% endcapture %}
-<h1 class="post-title">
-{{ header | amp_images }}
-</h1>
-<span>
-{{ page.date }} - {{ page.author }}
-</span>
-{{ content | markdownify | amp_images }}
-</body>
+
+    {% include sidebar.html %}
+
+    <div class="content container {{ page.title }}-page">
+      {{ content | markdownify | amp_images }}
+    </div>
+
+  </body>
+  {% include icons.html %}
 </html>
